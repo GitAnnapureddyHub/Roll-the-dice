@@ -1,10 +1,17 @@
+''' 
+Climbing the Empire State Building by playing a game with your friends. 
+You throw a dice, for 1 or 2: You go one step down, 
+for 3, 4 or 5: you go one step high, 
+for 6: you get chance to throw again and the number on the dice shows how many steps you can go high
+'''
+
 # Import Numpy
 import numpy as np
 
 #Set up seed for generating random integers
 np.random.seed(123)
 
-# Starting step
+# Starting step is taken as 50
 step = 50
 
 # Roll the dice
@@ -13,9 +20,11 @@ dice = np.random.randint(1,7)
 # If the number is 1 or 2
 if dice <= 2 :
     step = step - 1
+    
 # If the number is 3, 4 or 5   
 elif dice > 2 and dice <= 5 :
     step += 1
+    
 #if the number is 6, roll the dice again
 else:
     step = step + np.random.randint(1,7)
