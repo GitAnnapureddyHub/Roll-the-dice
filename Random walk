@@ -28,3 +28,12 @@ for x in range(100) :
     random_walk.append(step)             # Add your step to random_walk
 
 print(random_walk)                       # Print random_walk list
+
+
+
+
+
+# To visualize how your random walk went, let us draw a line plot using matplotlib
+import matplotlib.pyplot as  plt
+plt.plot(random_walk)
+plt.show()
