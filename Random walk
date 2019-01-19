@@ -1,0 +1,30 @@
+'''
+Your position in the building after rolling the dice 100 times
+One condition is you cannot go to a step below 0
+'''
+
+# Import Numpy package
+import numpy as np
+
+# Set the seed
+np.random.seed(123)
+
+# Initialize random_walk list
+random_walk = [0]
+
+# simulating 100 times
+for x in range(100) :
+    step = random_walk[-1]              # Last element of random_walk is the step. Intially 0
+    dice = np.random.randint(1,7)       # Random integer generated from 1 to 6
+
+    if dice <= 2:
+        #  use max to make sure step can't go below 0
+        step = max(0, step-1)            # step is decremented by 1 and it can't go below 0
+    elif dice <= 5:
+        step = step + 1                  # One step high
+    else:
+        step = step + np.random.randint(1,7)      # Roll again
+
+    random_walk.append(step)             # Add your step to random_walk
+
+print(random_walk)                       # Print random_walk list
